@@ -1,0 +1,21 @@
+// Atualiza o ano no footer
+document.getElementById('year').textContent = new Date().getFullYear();
+
+// Simula adição ao carrinho
+document.querySelectorAll('.produto button').forEach(button => {
+    button.addEventListener('click', () => {
+        const produto = button.parentElement.querySelector('h3').textContent;
+        alert(`${produto} adicionado ao carrinho!`);
+    });
+});
+
+// Validação simples de login
+document.querySelector('#login button')?.addEventListener('click', (e) => {
+    e.preventDefault();
+    const email = document.querySelector('#login input[type="email"]').value;
+    if (!email.includes('@')) {
+        alert('Por favor, insira um e-mail válido!');
+    } else {
+        alert('Login realizado com sucesso!');
+    }
+});
